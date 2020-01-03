@@ -2,20 +2,21 @@
 
 function smtp_mail($to, $subject, $message, $from = '')
 {
-    $headers = "" .
-               "From:" . $from . "\r\n" .
-               "Reply-To:" . $from . "\r\n" .
-               "Return-Path: <noreply@domain.com>\r\n" .
-               "X-Mailer: PHPMailer 5.2.27 (https://github.com/PHPMailer/PHPMailer)" . "\r\n" .
-               "Date: ".date("r")."\r\n" .
-               "MIME-Version: 1.0" . "\r\n";
-               "Content-Type: text/plain; charset=UTF-8" . "\r\n";
-    
-	$recipients = explode(',', $to);
+	// configurations
 	$user = 'user@domain.com';
 	$pass = 'password';
 	$smtp_host = 'mail.domain.com';
 	$smtp_port = 26;
+
+	$headers = "" .
+               "From:" . $from . "\r\n" .
+               "Reply-To:" . $from . "\r\n" .
+               "Return-Path:" . $from . "\r\n" .
+               "X-Mailer: PHPMailer 5.2.27 (https://github.com/PHPMailer/PHPMailer)" . "\r\n" .
+               "Date: ".date("r")."\r\n" .
+               "MIME-Version: 1.0" . "\r\n";
+               "Content-Type: text/plain; charset=UTF-8" . "\r\n";
+    	$recipients = explode(',', $to);
 	if (!($socket = fsockopen($smtp_host, $smtp_port, $errno, $errstr, 15))) {
 		echo "Error connecting to '$smtp_host' ($errno) ($errstr)";
 	}
