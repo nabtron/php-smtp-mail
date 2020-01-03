@@ -1,5 +1,9 @@
 <?php
 
+/** 
+  * usage example:
+  * smtp_mail('to@email.com','subject','message body','sender name <sender@email.com>');
+  */
 function smtp_mail($to, $subject, $message, $from = '')
 {
 	// configurations
