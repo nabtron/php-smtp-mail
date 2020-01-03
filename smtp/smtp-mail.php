@@ -14,8 +14,8 @@ function smtp_mail($to, $subject, $message, $from = '')
 	$recipients = explode(',', $to);
 	$user = 'user@domain.com';
 	$pass = 'password';
-  $smtp_host = 'mail.domain.com';
-  $smtp_port = 26;
+	$smtp_host = 'mail.domain.com';
+	$smtp_port = 26;
 	if (!($socket = fsockopen($smtp_host, $smtp_port, $errno, $errstr, 15))) {
 		echo "Error connecting to '$smtp_host' ($errno) ($errstr)";
 	}
