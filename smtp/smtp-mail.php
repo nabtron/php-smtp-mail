@@ -9,7 +9,7 @@ function smtp_mail($to, $subject, $message, $from = '')
 	// configurations
 	$user = 'user@domain.com';
 	$pass = 'password';
-	$smtp_host = 'mail.domain.com';
+	$smtp_host = 'mail.domain.com'; // for ssl use: ssl://mail.domain.com
 	$smtp_port = 26;
 
 	$headers = "" .
